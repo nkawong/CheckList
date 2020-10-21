@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="15dp">
+
+    <TextView
+        android:id="@+id/item_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Enter Item/Task Name"
+        android:textSize="22sp"
+        android:textAlignment="center"
+        />
+    <EditText
+        android:id="@+id/item_txt_input"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:hint="Enter Item/Task Name"
+        android:layout_marginTop="10dp"
+        />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/cancel_item_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/colorPrimary"
+            android:text="Cancel"
+            android:textColor="#fff"
+            android:textSize="18sp"
+            android:layout_weight="1"/>
+        <Button
+            android:id="@+id/add_item_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/colorPrimary"
+            android:text="Add"
+            android:textColor="#fff"
+            android:textSize="18sp"
+            android:layout_weight="1"/>
+    </LinearLayout>
+
+
+</LinearLayout>
