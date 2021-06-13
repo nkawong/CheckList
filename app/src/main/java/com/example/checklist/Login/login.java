@@ -1,4 +1,4 @@
-package com.example.checklist;
+package com.example.checklist.Login;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -12,16 +12,15 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.checklist.R;
+import com.example.checklist.listview_layout;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.database.FirebaseDatabase;
-
-import org.w3c.dom.Text;
 
 public class login extends AppCompatActivity {
+    /* Variables */
     private FirebaseAuth mAuth;
     private FirebaseAuth.AuthStateListener mAuthListener;
     private EditText emailID;
@@ -32,7 +31,11 @@ public class login extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        /* FirebaseAuth instance */
         mAuth = FirebaseAuth.getInstance();
+
+        /* Listens to for the AuthState */
         mAuthListener = new FirebaseAuth.AuthStateListener() {
             @Override
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
@@ -66,7 +69,7 @@ public class login extends AppCompatActivity {
         signUp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent signUpIntent = new Intent(login.this,register.class);
+                Intent signUpIntent = new Intent(login.this, register.class);
                 startActivity(signUpIntent);
             }
         });
@@ -76,7 +79,7 @@ public class login extends AppCompatActivity {
         String passwrd = passwordID.getText().toString();
 
         if(TextUtils.isEmpty(email) || TextUtils.isEmpty(passwrd)){
-            Toast.makeText(login.this, "Fields are Empty ", Toast.LENGTH_SHORT).show();
+            Toast.makeText(login.this, "Field(s) are Empty ", Toast.LENGTH_SHORT).show();
         }else{
             mAuth.signInWithEmailAndPassword(emailID.getText().toString().trim(),passwordID.getText().toString()).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                 @Override

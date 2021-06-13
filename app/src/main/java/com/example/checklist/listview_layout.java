@@ -1,9 +1,7 @@
 package com.example.checklist;
 
-import android.content.ClipData;
 import android.content.Intent;
 import android.graphics.Canvas;
-import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -19,11 +17,12 @@ import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.checklist.Adapter.list_adapter;
+import com.example.checklist.Login.login;
+import com.example.checklist.models.Directory_List;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -69,12 +68,7 @@ public class listview_layout extends AppCompatActivity implements addListDialog.
     FirebaseAuth mAuth;
     FirebaseUser user;
 
-//    @Override
-//    protected void onCreate(Bundle savedInstanceState) {
-//        super.onCreate(savedInstanceState);
-//
-//
-//    }
+
     @Override
     protected void onStart() {
         super.onStart();
@@ -179,7 +173,6 @@ public class listview_layout extends AppCompatActivity implements addListDialog.
                 mAdapter = new list_adapter(listview_layout.this,list,listview_layout.this); //required type context providing ValueEventListener
                 list_task.setAdapter(mAdapter);
                 list_task.setLayoutManager(new LinearLayoutManager(listview_layout.this));
-
             }
 
             @Override

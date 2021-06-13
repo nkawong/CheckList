@@ -2,20 +2,15 @@ package com.example.checklist.Adapter;
 
 import android.content.Context;
 import android.graphics.Paint;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.CheckBox;
 import android.widget.TextView;
 
-import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.checklist.R;
-import com.example.checklist.item;
-
-import org.w3c.dom.Text;
+import com.example.checklist.models.item;
 
 import java.util.ArrayList;
 

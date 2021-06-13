@@ -1,4 +1,4 @@
-package com.example.checklist;
+package com.example.checklist.models;
 
 public class item {
     private String item_name;
