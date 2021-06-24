@@ -114,6 +114,7 @@ public class login extends AppCompatActivity {
             if(TextUtils.isEmpty(passwrd)){
                 emailError.setVisibility(View.INVISIBLE);
                 passwordError.setVisibility(View.VISIBLE);
+                userNotFound.setVisibility(View.INVISIBLE);
             }
             else {
                 FirebaseDatabase.getInstance().getReference().child("Users").addListenerForSingleValueEvent(new ValueEventListener() {
