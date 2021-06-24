@@ -19,12 +19,14 @@ public class list_adapter extends RecyclerView.Adapter<list_adapter.listViewHold
     private ArrayList<Directory_List> titleNames;
     private OnItemClickListener mOnItemClickListener;
 
-
+    /* Constructor */
     public list_adapter(Context ct, ArrayList<Directory_List> titles,OnItemClickListener onItemClickListener){
         context = ct;
         titleNames = titles;
         mOnItemClickListener = onItemClickListener;
     }
+
+    /* Used to display items of the Adapter using the onBindViewHolder */
     @NonNull
     @Override
     public listViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -33,6 +35,8 @@ public class list_adapter extends RecyclerView.Adapter<list_adapter.listViewHold
         return new listViewHolder(mView, mOnItemClickListener);
     }
 
+
+    /* Displays data at a specific position */
     @Override
     public void onBindViewHolder(@NonNull listViewHolder holder, int position) {
         holder.titleText.setText(titleNames.get(position).getTitle_name());
@@ -43,6 +47,7 @@ public class list_adapter extends RecyclerView.Adapter<list_adapter.listViewHold
         return titleNames.size();
     }
 
+    /* Handles click */
     public class listViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
         TextView titleText;
         OnItemClickListener onItemClickListener;
@@ -60,6 +65,7 @@ public class list_adapter extends RecyclerView.Adapter<list_adapter.listViewHold
             onItemClickListener.OnItemClick(getAbsoluteAdapterPosition(),titleNames.get(getAbsoluteAdapterPosition()).getId().toString());
         }
     }
+    /* Callback function to communicate back to the main activity */
     public interface OnItemClickListener{
         public void OnItemClick(int position, String id);
     }

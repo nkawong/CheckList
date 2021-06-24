@@ -19,6 +19,7 @@ public class task_list_adapter extends RecyclerView.Adapter<task_list_adapter.ta
     private Context context;
     private OnItemClickListener mOnClickListener;
 
+    /* Constructor */
     public task_list_adapter(Context ct,  ArrayList<item> task, OnItemClickListener OnClickListener)
     {
         context = ct;
@@ -26,14 +27,15 @@ public class task_list_adapter extends RecyclerView.Adapter<task_list_adapter.ta
         mOnClickListener = OnClickListener;
     }
 
+    /* Used to display items of the Adapter using the onBindViewHolder */
     @Override
     public taskListViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
           LayoutInflater inflater = LayoutInflater.from(context);
           View view = inflater.inflate(R.layout.task_item_layout, parent, false);
-//        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.task_item,parent,false);
           return new taskListViewHolder(view, mOnClickListener);
     }
 
+    /* Displays data at a specific position */
     @Override
     public void onBindViewHolder(final taskListViewHolder holder, int position) {
         holder.taskName.setText(task_view.get(position).getItem_name());
@@ -47,7 +49,7 @@ public class task_list_adapter extends RecyclerView.Adapter<task_list_adapter.ta
     public int getItemCount() {
         return task_view.size();
     }
-
+    /* Handles Clicks */
     public class taskListViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
         public TextView taskName;
         public OnItemClickListener onItemClickListener;
@@ -65,6 +67,7 @@ public class task_list_adapter extends RecyclerView.Adapter<task_list_adapter.ta
             onItemClickListener.onItemClick(getAbsoluteAdapterPosition());
         }
     }
+    /* Callback function that communicates to the item activitiy */
     public interface OnItemClickListener{
         public void onItemClick(int position);
     }
