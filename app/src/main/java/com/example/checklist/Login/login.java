@@ -106,6 +106,8 @@ public class login extends AppCompatActivity {
         boolean flag;
         if(TextUtils.isEmpty(email)){
             emailError.setVisibility(View.VISIBLE);
+            passwordError.setVisibility(View.INVISIBLE);
+            userNotFound.setVisibility(View.INVISIBLE);
             Toast.makeText(login.this, "Email field is Empty ", Toast.LENGTH_SHORT).show();
         }else{
 
