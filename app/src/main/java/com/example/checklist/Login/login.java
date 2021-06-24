@@ -118,6 +118,8 @@ public class login extends AppCompatActivity {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                         if(!isRegister(email, dataSnapshot)) {
+                            emailError.setVisibility(View.INVISIBLE);
+                            passwordError.setVisibility(View.INVISIBLE);
                             userNotFound.setVisibility(View.VISIBLE);
                         }
                     }
