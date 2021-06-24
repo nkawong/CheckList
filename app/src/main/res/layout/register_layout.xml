@@ -5,6 +5,20 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="#0acffe">
 
+    <TextView
+        android:id="@+id/userRegister"
+        android:layout_width="195dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="44dp"
+        android:layout_marginBottom="227dp"
+        android:text="User Already Register"
+        android:textColor="#F00"
+        android:textStyle="bold"
+        android:visibility="invisible" />
+
     <ImageView
         android:layout_width="332dp"
         android:layout_height="325dp"
@@ -56,10 +70,10 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
         android:layout_centerInParent="true"
-        android:layout_marginStart="44dp"
+        android:layout_marginStart="48dp"
         android:layout_marginTop="124dp"
-        android:layout_marginEnd="40dp"
-        android:layout_marginBottom="181dp"
+        android:layout_marginEnd="35dp"
+        android:layout_marginBottom="169dp"
         android:background="@drawable/rounded_corners"
         android:text="Register"
         android:textColor="#fff" />

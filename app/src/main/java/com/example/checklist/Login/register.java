@@ -5,6 +5,7 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -31,6 +32,7 @@ public class register extends AppCompatActivity {
     private User user;
     private FirebaseAuth mAuth;
     private DatabaseReference dbUser;
+    private TextView userReg;
 
 
     @Override
@@ -43,6 +45,7 @@ public class register extends AppCompatActivity {
         register = findViewById(R.id.register);
         register_email = (EditText) findViewById(R.id.register_email_input);
         register_password = (EditText) findViewById(R.id.register_password_input);
+        userReg = findViewById(R.id.userRegister);
 
         /* Listens when the register button gets clicked */
         register.setOnClickListener(new View.OnClickListener() {
@@ -77,8 +80,10 @@ public class register extends AppCompatActivity {
         FirebaseDatabase.getInstance().getReference().child("Users").addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                if(isValidEmail(email, dataSnapshot))
-                    Toast.makeText(register.this, "User Already Exists", Toast.LENGTH_SHORT).show();
+                if(isValidEmail(email, dataSnapshot)) {
+                    userReg.setVisibility(View.VISIBLE);
+                    //oast.makeText(register.this, "User Already Exists", Toast.LENGTH_SHORT).show();
+                }
             }
 
             @Override
