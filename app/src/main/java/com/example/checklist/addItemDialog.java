@@ -42,8 +42,9 @@ public class addItemDialog extends AppCompatDialogFragment {
                 String input = mEditTextName.getText().toString().trim();
                 if(!input.equals("")) {
                     mOnEditTextSelected.sendEditText(input);
+                    aDialog.dismiss();
                 }
-                aDialog.dismiss();
+
             }
         });
         cancelButton.setOnClickListener(new View.OnClickListener() {

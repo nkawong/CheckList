@@ -45,8 +45,9 @@ public class addListDialog extends AppCompatDialogFragment{
                 String input = editTitleName.getText().toString().trim();
                 if(!input.equals("")) {
                     mOnInputSelected.sendInput(input);
+                    aDialog.dismiss();
                 }
-                aDialog.dismiss();
+
             }
         });
 

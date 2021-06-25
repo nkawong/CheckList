@@ -102,6 +102,7 @@ public class task_item_list_activity extends AppCompatActivity implements addIte
             return false;
         }
 
+
         @Override
         public void onSwiped(@NonNull RecyclerView.ViewHolder viewHolder, int direction) {
             int position = viewHolder.getAbsoluteAdapterPosition();
