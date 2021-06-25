@@ -70,6 +70,7 @@ public class addListDialog extends AppCompatDialogFragment{
         }
     }
 
+    /* Callback function to the ListView Activity*/
     public interface OnInputSelected{
         void sendInput(String input);
     }

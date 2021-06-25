@@ -67,6 +67,7 @@ public class addItemDialog extends AppCompatDialogFragment {
         }
     }
 
+    /* Callback function to Item Activity */
     public interface OnEditTextSelected{
         void sendEditText(String editTextAdd);
     }
